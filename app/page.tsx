@@ -36,116 +36,126 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-white text-black">
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
-        <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center justify-between w-full">
-            <Logo size="md" />
+  <div className="container flex items-center justify-between py-4">
+  <div className="flex flex-col md:flex-row items-center justify-between w-full gap-3">
 
-            {/* Desktop Navigation - Only visible on large screens */}
-            <nav className="hidden lg:flex items-center space-x-8">
+      <Logo size="md" />
+
+      {/* Desktop Navigation - Only visible on large screens */}
+      <nav className="hidden lg:flex items-center space-x-8">
+        <Link
+          href="#how-it-works"
+          className="text-sm font-medium hover:text-red-600 transition-colors"
+          onClick={(e) => {
+            e.preventDefault()
+            document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })
+          }}
+        >
+          How It Works
+        </Link>
+        <Link
+          href="#creators"
+          className="text-sm font-medium hover:text-red-600 transition-colors"
+          onClick={(e) => {
+            e.preventDefault()
+            document.getElementById("creators")?.scrollIntoView({ behavior: "smooth" })
+          }}
+        >
+          For Creators
+        </Link>
+        <Link
+          href="#ai-tools"
+          className="text-sm font-medium hover:text-red-600 transition-colors"
+          onClick={(e) => {
+            e.preventDefault()
+            document.getElementById("ai-tools")?.scrollIntoView({ behavior: "smooth" })
+          }}
+        >
+          AI Tools
+        </Link>
+        <Link
+          href="#app"
+          className="text-sm font-medium hover:text-red-600 transition-colors"
+          onClick={(e) => {
+            e.preventDefault()
+            document.getElementById("app")?.scrollIntoView({ behavior: "smooth" })
+          }}
+        >
+          App Screens
+        </Link>
+      </nav>
+
+      <div className="flex items-center gap-3">
+        {/* SBD Giveaway Button - Visible on all screen sizes */}
+        <Link
+  href="https://app.crowncast.club/Public_campaigns/67fb9461b38fa6fb891dbecf"
+  className="animate-slow-pulse bg-red-600 hover:bg-red-700 text-white font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-md transition-all duration-500 text-center max-w-[180px] sm:max-w-none mx-auto"
+>
+  🎯 SBD Giveaway – Going On
+</Link>
+
+
+        {/* Mobile & Medium Screen Navigation */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="sm" className="border-black hover:bg-gray-100">
+              Menu
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48">
+            <DropdownMenuItem asChild>
               <Link
                 href="#how-it-works"
-                className="text-sm font-medium hover:text-red-600 transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
+                className="w-full cursor-pointer"
+                onClick={() =>
                   document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })
-                }}
+                }
               >
                 How It Works
               </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link
                 href="#creators"
-                className="text-sm font-medium hover:text-red-600 transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
+                className="w-full cursor-pointer"
+                onClick={() =>
                   document.getElementById("creators")?.scrollIntoView({ behavior: "smooth" })
-                }}
+                }
               >
                 For Creators
               </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link
                 href="#ai-tools"
-                className="text-sm font-medium hover:text-red-600 transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
+                className="w-full cursor-pointer"
+                onClick={() =>
                   document.getElementById("ai-tools")?.scrollIntoView({ behavior: "smooth" })
-                }}
+                }
               >
                 AI Tools
               </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link
                 href="#app"
-                className="text-sm font-medium hover:text-red-600 transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
+                className="w-full cursor-pointer"
+                onClick={() =>
                   document.getElementById("app")?.scrollIntoView({ behavior: "smooth" })
-                }}
+                }
               >
                 App Screens
               </Link>
-            </nav>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    </div>
+  </div>
+</header>
 
-            <div className="flex items-center gap-3">
-              {/* Mobile & Medium Screen Navigation */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="sm" className="border-black hover:bg-gray-100">
-                    Menu
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48">
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="#how-it-works"
-                      className="w-full cursor-pointer"
-                      onClick={(e) => {
-                        document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })
-                      }}
-                    >
-                      How It Works
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="#creators"
-                      className="w-full cursor-pointer"
-                      onClick={(e) => {
-                        document.getElementById("creators")?.scrollIntoView({ behavior: "smooth" })
-                      }}
-                    >
-                      For Creators
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="#ai-tools"
-                      className="w-full cursor-pointer"
-                      onClick={(e) => {
-                        document.getElementById("ai-tools")?.scrollIntoView({ behavior: "smooth" })
-                      }}
-                    >
-                      AI Tools
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="#app"
-                      className="w-full cursor-pointer"
-                      onClick={(e) => {
-                        document.getElementById("app")?.scrollIntoView({ behavior: "smooth" })
-                      }}
-                    >
-                      App Screens
-                    </Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
 
-             
-            </div>
-          </div>
-        </div>
-      </header>
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
